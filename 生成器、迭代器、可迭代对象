@@ -40,6 +40,26 @@ for i in Foo():
     print(i)
 '''
 
+#加上类封装代码就牛逼了, 打印abc5次
+'''
+class Foo():
+    def __init__(self,data):
+        self.data = data
+
+    def __iter__(self):
+        for m in self.data:
+            yield m
+
+class Changelist():
+    def f1(self):
+        for n in [1,2,3,4,5]:
+            yield Foo(['a','b','c'])
+
+cl  = Changelist()
+for i in cl.f1():
+    for x in i:
+        print(x,end=" ")
+'''
 
 四、待续。。。
 
