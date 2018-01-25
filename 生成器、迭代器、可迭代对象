@@ -88,3 +88,6 @@ class Changelist():
     def show_comb_search(self, ):
         for name in self.comb_filter:  # ['gender','status','dp']
             yield Foo(models.UserInfo.objects.all())  # 所有用户变为一个列表或可循环对象,直接yield
+
+
+
