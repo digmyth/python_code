@@ -118,3 +118,41 @@ obj = Foo()
 obj['name'] = 'wxq'
 print(obj['name'])
 ```
+
+## 正则分组
+```
+import re
+p = re.compile(r'(.*)/id\-(.*)')
+
+random_str = 'sfdasdfsd/id-xxxxxet'
+ret = p.findall(random_str)
+print(ret[0][0])
+print(ret[0][1])
+```
+
+## zip
+
+```
+
+```
+
+## md5生成随机字符串
+```
+import hashlib
+def gen_random_str():
+    md5 = hashlib.md5()
+    md5.update(str(time.time()).encode("utf-8"))
+    return md5.hexdigest()
+
+print(gen_random_str())
+```
+
+## uuid 生成随机字符串
+```
+import uuid
+x=uuid.uuid1()
+print(x)
+```
+
+
+## 
