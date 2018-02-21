@@ -21,6 +21,40 @@ isinstance(obj.f1, types.MethodType)    # True obj.f1是绑定方法
 
 ## type()
 
+类是程序运行时动态创建的，那么是谁创建了类呢，答案是type()函数，type()函数既可以返回一个对象的类型，又可以创建出新的类型.
+通过type()函数创建的类和直接写class是完全一样的，因为Python解释器遇到class定义时，仅仅是扫描一下class定义的语法，然后调用type()函数创建出class
+
+要创建一个class对象，type()函数依次传入3个参数：
+
+1 class的名称；
+2 继承的父类集合，注意Python支持多重继承，如果只有一个父类，别忘了tuple的单元素写法；
+3 class的方法名称与函数绑定，这里我们把函数fn绑定到方法名hello上。
+
+示例
+```
+def f1(self):
+    print('test func')
+
+Foo = type('Foo',(object,), {'func':f1})
+obj = Foo()
+obj.func()
+print(obj.func)  # 真正绑定，是类的绑定方法
+```
+
+
+当然了，setattr反射机制也可以动态加载一个函数,但不是类的绑定方法
+```
+class Foo():
+    pass
+
+def func(self):
+    print('test func')
+
+obj = Foo()
+setattr(obj,'func', func)
+f=getattr(obj,'func')
+f(obj)
+```
 
 
 ## getattr setattr delattr
