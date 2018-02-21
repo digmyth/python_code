@@ -3,7 +3,7 @@
 
 satisfied with the Python development
 
-## 
+## types
 ```
 import types
 
@@ -18,6 +18,8 @@ isinstance(Foo.f1, types.FunctionType)  # True Foo.f1是函数
 isinstance(f2, types.FunctionType)      # True
 isinstance(obj.f1, types.MethodType)    # True obj.f1是绑定方法
 ```
+
+## type()
 
 
 
