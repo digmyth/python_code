@@ -133,7 +133,17 @@ print(ret[0][1])
 ## zip
 
 ```
+a = ["k1","k2","k3","k4"]
+b = ["v1","v2","v3","v4"]
 
+dic = {}
+L = []
+for k,v in zip(a,b):
+    dic['name'] = k
+    dic['uuid'] = v
+    L.append(dic)
+    dic = {}
+print(L)    
 ```
 
 ## md5生成随机字符串
