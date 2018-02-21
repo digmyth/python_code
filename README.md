@@ -21,6 +21,15 @@ isinstance(f2, types.FunctionType)      # True
 isinstance(obj.f1, types.MethodType)    # True obj.f1是绑定方法
 ```
 
+
+```
+type(fn)==types.FunctionType
+type(abs)==types.BuiltinFunctionType
+type(lambda x: x)==types.LambdaType 
+type((x for x in range(10)))==types.GeneratorType
+```
+
+
 ## type()
 
 类是程序运行时动态创建的，那么是谁创建了类呢，答案是type()函数，type()函数既可以返回一个对象的类型，又可以创建出新的类型.
