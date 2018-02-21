@@ -4,6 +4,8 @@
 satisfied with the Python development
 
 ## types
+
+types.FunctionType/types.MethodType道出函数和类方法的区别，如果是函数，self参数手动传入.如果是绑定方法，self参数不用传，自动把对象传入self
 ```
 import types
 
@@ -75,12 +77,12 @@ choice = input(">>>")
 if hasattr(obj,choice):
     x=getattr(obj,choice)
     print(x)
-    x()
+    x()       # 绑定方法调用时自动传入self
 else:
     setattr(obj,choice,func2)
     x=getattr(obj,choice)
     print(x)
-    x(obj)
+    x(obj)    #  函数调用时手动传入self
 ```
 
 ## getitem setitem delitem
