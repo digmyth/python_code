@@ -146,7 +146,8 @@ for k,v in zip(a,b):
 print(L)    
 ```
 
-## md5生成随机字符串
+## hashlib生成随机字符串
+hashlib.md5()生成随机字符串
 ```
 import hashlib
 def gen_random_str():
@@ -155,6 +156,20 @@ def gen_random_str():
     return md5.hexdigest()
 
 print(gen_random_str())
+```
+
+hashlib.sha1()也可以生成随机字符串，不过没有安全性，己经被破解,openstack/nova/_base/xxxx就是基于镜像ID+sha1生成的
+```
+import hashlib
+image_id = 'xxxxxxxxxxxx'
+x = hashlib.sha1()
+x.update(image_id.encode())
+print(x.hexdigest())
+```
+
+写成一行
+```
+x=hashlib.sha1("xx".encode()).hexdigest()
 ```
 
 ## uuid 生成随机字符串
