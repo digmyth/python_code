@@ -179,5 +179,36 @@ x=uuid.uuid1()
 print(x)
 ```
 
+## json序列化
 
-## 
+我们都知道json.dumps()序列化后格式为""的字符串
+```
+import json
+dic = {'name':'wxq','age':25}
+d=json.dumps(dic)
+print(d)  # {"name": "wxq", "age": 25}
+```
+
+那么能json.loads()的一定是""的字符串
+```
+import json
+s= "sdfdf"
+json.loads(s)  # 肯定会报错，因为s其实是sdfdf
+```
+
+正确姿势除了正常json.dumps()外，还可以
+```
+import json
+s= '"sdfdf"'
+x=json.loads(s)
+print(type(x), x)  # <class 'str'> sdfdf
+```
+
+
+
+
+
+
+
+
+
