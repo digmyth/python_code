@@ -246,8 +246,22 @@ obj.func1()   # 这里打印"B.func2",也就是说先从调用对象找起
 ```
 
 
+`__getattr__` `__setattr__`
+```
+class Foo():
+    def __init__(self):
+        self.name = 'aaa' # 本来是可以设置值的，但有__setattr__拦截并pass掉，意味着没有赋上属性
 
+    def __getattr__(self, item):
+        return 'xxx'
 
+    def __setattr__(self, key, value):
+        pass
+
+obj = Foo()
+obj.name = 'wxq'    # 本来是可以设置值的，但有__setattr__拦截并pass掉，意味着没有赋上属性
+print(obj.name)     # 当没有name属性时，执行__getattr__
+```
 
 
 
