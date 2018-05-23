@@ -6,13 +6,14 @@
 
 [参考2](https://www.cnblogs.com/alex3714/p/6351797.html)
 
-## 安装
+## 安装celery
 celery 4.0以上不支持windows,为测试方便我安装低版本
 ```
 pip3 install celery==3.1.25
 pip3 install eventlet  # 仅需windows时
 ```
 
+## 快速入门
 ```
 #s1.py
 from celery import Celery
@@ -60,3 +61,10 @@ celery worker -A s1 -l info -P eventlet
 python3 s2.py  # 得到ID
 python3 s3.py  # 根据ID取出结果
 ```
+
+## 结构化目录
+
+```
+xx
+```
+
