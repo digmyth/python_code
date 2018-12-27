@@ -264,4 +264,27 @@ print(obj.name)     # 当没有name属性时，执行__getattr__
 ```
 
 
+## get_local ip address
 
+```
+#!/usr/bin/env python3
+
+import socket
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.connect(('8.8.8.8',80))
+ip = s.getsockname()[0]
+print(ip)
+```
+
+## trancefor mask to  num
+```
+#!/usr/bin/env python3
+
+netmask = '255.255.240.0'
+result = ""
+print(netmask)
+for num in netmask.split('.'):
+  temp = str(bin(int(num)))[2:]
+  result = result + temp
+print(len("".join(str(result).split('0')[0:1])))
+```
