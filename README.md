@@ -276,7 +276,7 @@ ip = s.getsockname()[0]
 print(ip)
 ```
 
-## trancefor mask to  num
+## convert netmask into num
 ```
 #!/usr/bin/env python3
 
