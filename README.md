@@ -16,17 +16,17 @@ obj = Foo()
 def f2(self):
     print('f2')
 
-isinstance(Foo.f1, types.FunctionType)  # True Foo.f1是函数
-isinstance(f2, types.FunctionType)      # True
-isinstance(obj.f1, types.MethodType)    # True obj.f1是绑定方法
+isinstance(Foo.f1, types.FunctionType)  # True (Foo.f1是函数)
+isinstance(f2, types.FunctionType)      # True (f2肯定是函数)
+isinstance(obj.f1, types.MethodType)    # True (obj.f1是绑定方法，不是函数)
 ```
 
-
+有时写代码会用到如下判断
 ```
-type(fn)==types.FunctionType
-type(abs)==types.BuiltinFunctionType
-type(lambda x: x)==types.LambdaType 
-type((x for x in range(10)))==types.GeneratorType
+type(fn)==types.FunctionType       # 返回True
+type(abs)==types.BuiltinFunctionType  # 返回True
+type(lambda x: x)==types.LambdaType   # 返回True
+type((x for x in range(10)))==types.GeneratorType   # 返回True
 ```
 
 
